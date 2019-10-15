@@ -1,0 +1,24 @@
+﻿@page "/"
+@inject ZoneService ZoneService;
+
+<h1>Hello, world!</h1>
+
+<button @onclick="Refresh">Swap</button>
+
+<Zone>
+    <SimpleChild Id="1"></SimpleChild>
+</Zone>
+
+<Zone>
+    <SimpleChild Id="2"></SimpleChild>
+</Zone>
+ 
+
+<Output></Output>
+
+@code{
+    public void Refresh()
+    {
+        ZoneService.Swap();
+    }
+}

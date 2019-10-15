@@ -1,0 +1,12 @@
+﻿@inject ZoneService ZoneService;
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        ZoneService.Register(ChildContent);
+    }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

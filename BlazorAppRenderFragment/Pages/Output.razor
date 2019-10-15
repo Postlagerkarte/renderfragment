@@ -1,0 +1,20 @@
+﻿@inject ZoneService ZoneService
+
+@foreach(var frag in ZoneService.GetFrags())
+{
+    <div>
+        @frag
+    </div>
+}
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        ZoneService.StateHasChanged += async () =>
+        {
+            await InvokeAsync(() => StateHasChanged());
+        };
+    }
+
+}

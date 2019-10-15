@@ -1,0 +1,20 @@
+﻿<h1>Child Item @Id</h1>
+
+<p>Counter: @State</p>
+
+<button @onclick="IncState">Increase</button>
+
+
+
+@code {
+
+    public int State { get; set; }
+
+    public void IncState()
+    {
+        State++;
+    }
+
+    [Parameter]
+    public int Id { get; set; }
+}
