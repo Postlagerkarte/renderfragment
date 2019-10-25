@@ -26,9 +26,19 @@ namespace BlazorAppRenderFragment.Pages
             StateHasChanged?.Invoke();
         }
 
-        public List<RenderFragment> GetFrags()
+        public List<RenderFragment> GetFrags(int zoneId)
         {
-            return frags;
+            if(zoneId == 1)
+            {
+                return frags.Take(1).ToList();
+            }
+
+            if(zoneId == 2)
+            {
+                return frags.Skip(1).Take(1).ToList();
+            }
+
+            throw new InvalidOperationException("unkown zone id");
         }
       
             
